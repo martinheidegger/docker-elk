@@ -19,12 +19,12 @@ kibana_index: ".kibana"
 # used by the Kibana server to perform maintence on the kibana_index at statup. Your Kibana
 # users will still need to authenticate with Elasticsearch (which is proxied thorugh
 # the Kibana server)
-# kibana_elasticsearch_username: user
-# kibana_elasticsearch_password: pass
+# kibana_elasticsearch_username: root
+# kibana_elasticsearch_password: zodiac-tremble-paradise
 
 # If your Elasticsearch requires client certificate and key
-# kibana_elasticsearch_client_crt: /path/to/your/client.crt
-# kibana_elasticsearch_client_key: /path/to/your/client.key
+# kibana_elasticsearch_client_crt: /usr/share/cert/bundle.pem
+# kibana_elasticsearch_client_key: /usr/share/cert/privkey.pem
 
 # If you need to provide a CA certificate for your Elasticsarech instance, put
 # the path of the pem file here.
@@ -53,8 +53,8 @@ shard_timeout: 0
 verify_ssl: true
 
 # SSL for outgoing requests from the Kibana Server (PEM formatted)
-# ssl_key_file: /path/to/your/server.key
-# ssl_cert_file: /path/to/your/server.crt
+ssl_cert_file: /usr/share/cert/bundle.pem
+ssl_key_file: /usr/share/cert/privkey.pem
 
 # Set the path to where you would like the process id file to be created.
 # pid_file: /var/run/kibana.pid
