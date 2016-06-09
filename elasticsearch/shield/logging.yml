@@ -16,6 +16,7 @@ additivity:
   shield.audit.logfile: false
 
 appender:
+
   access_log:
     type: dailyRollingFile
     file: ${path.logs}/${cluster.name}-access.log
