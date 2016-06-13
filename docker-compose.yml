@@ -22,7 +22,6 @@ services:
     build: kibana/
     volumes:
       - /opt/elk/cert:/usr/share/cert
-      - /opt/elk/kibana/config/:/opt/kibana/config/
     ports:
       - "5601:5601"
     links:

@@ -67,3 +67,25 @@ remote_marvel_agent:
   indices:
     - names: '.marvel-es-*'
       privileges: [ "all" ]
+
+kibana4_server:
+  cluster:
+      - monitor
+  indices:
+    - names: '.kibana'
+      privileges:
+        - all
+
+logstash:
+  cluster:
+    - monitor
+  indices:
+    - names: 'logstash-*'
+      privileges:
+        - view_index_metadata
+        - read
+    - names: '.kibana*' 
+      privileges:
+        - manage
+        - read
+        - index
