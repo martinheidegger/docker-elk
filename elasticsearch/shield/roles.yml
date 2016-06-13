@@ -79,6 +79,8 @@ kibana4_server:
 logstash:
   cluster:
     - monitor
+    - indices:admin/template/get
+    - indices:admin/template/put
   indices:
     - names: 'logstash-*'
       privileges:
