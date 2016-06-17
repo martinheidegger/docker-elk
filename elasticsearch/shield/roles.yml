@@ -31,13 +31,6 @@ transport_client:
       - transport_client
 
 # The required permissions for the kibana 4 server
-kibana4_server:
-  cluster:
-      - monitor
-  indices:
-    - names: '.kibana'
-      privileges:
-        - all
 
 # The required role for logstash users
 logstash:
@@ -72,6 +65,9 @@ kibana4_server:
   cluster:
       - monitor
   indices:
+    - names: 'logstash-*'
+      privileges:
+        - all
     - names: '.kibana'
       privileges:
         - all
@@ -81,6 +77,7 @@ logstash:
     - monitor
     - indices:admin/template/get
     - indices:admin/template/put
+    - indices:data/write/bulk
   indices:
     - names: 'logstash-*'
       privileges:
